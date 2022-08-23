@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17gitea/v1/messages.proto\x12\x08gitea.v1\"\"\n\x0cGiteaRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"+\n\rGiteaResponse\x12\x1a\n\x08giteaing\x18\x01 \x01(\tR\x08giteaingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17gitea/v1/messages.proto\x12\x08gitea.v1\"\"\n\x0cGiteaRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"+\n\rGiteaResponse\x12\x1a\n\x08giteaing\x18\x01 \x01(\tR\x08giteaing\"&\n\x10IntroduceRequest\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\"/\n\x11IntroduceResponse\x12\x1a\n\x08sentence\x18\x01 \x01(\tR\x08sentenceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'gitea.v1.messages_pb2', globals())
@@ -24,4 +24,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GITEAREQUEST._serialized_end=71
   _GITEARESPONSE._serialized_start=73
   _GITEARESPONSE._serialized_end=116
+  _INTRODUCEREQUEST._serialized_start=118
+  _INTRODUCEREQUEST._serialized_end=156
+  _INTRODUCERESPONSE._serialized_start=158
+  _INTRODUCERESPONSE._serialized_end=205
 # @@protoc_insertion_point(module_scope)

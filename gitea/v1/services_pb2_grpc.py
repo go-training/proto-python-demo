@@ -19,6 +19,11 @@ class GiteaServiceStub(object):
                 request_serializer=gitea_dot_v1_dot_messages__pb2.GiteaRequest.SerializeToString,
                 response_deserializer=gitea_dot_v1_dot_messages__pb2.GiteaResponse.FromString,
                 )
+        self.Introduce = channel.unary_stream(
+                '/gitea.v1.GiteaService/Introduce',
+                request_serializer=gitea_dot_v1_dot_messages__pb2.IntroduceRequest.SerializeToString,
+                response_deserializer=gitea_dot_v1_dot_messages__pb2.IntroduceResponse.FromString,
+                )
 
 
 class GiteaServiceServicer(object):
@@ -30,6 +35,14 @@ class GiteaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Introduce(self, request, context):
+        """Introduce is a server-streaming request demo.  This method allows for a single request that will return a series
+        of responses
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GiteaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -37,6 +50,11 @@ def add_GiteaServiceServicer_to_server(servicer, server):
                     servicer.Gitea,
                     request_deserializer=gitea_dot_v1_dot_messages__pb2.GiteaRequest.FromString,
                     response_serializer=gitea_dot_v1_dot_messages__pb2.GiteaResponse.SerializeToString,
+            ),
+            'Introduce': grpc.unary_stream_rpc_method_handler(
+                    servicer.Introduce,
+                    request_deserializer=gitea_dot_v1_dot_messages__pb2.IntroduceRequest.FromString,
+                    response_serializer=gitea_dot_v1_dot_messages__pb2.IntroduceResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +80,22 @@ class GiteaService(object):
         return grpc.experimental.unary_unary(request, target, '/gitea.v1.GiteaService/Gitea',
             gitea_dot_v1_dot_messages__pb2.GiteaRequest.SerializeToString,
             gitea_dot_v1_dot_messages__pb2.GiteaResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Introduce(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/gitea.v1.GiteaService/Introduce',
+            gitea_dot_v1_dot_messages__pb2.IntroduceRequest.SerializeToString,
+            gitea_dot_v1_dot_messages__pb2.IntroduceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

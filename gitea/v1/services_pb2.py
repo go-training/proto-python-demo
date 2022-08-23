@@ -14,13 +14,13 @@ _sym_db = _symbol_database.Default()
 from gitea.v1 import messages_pb2 as gitea_dot_v1_dot_messages__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17gitea/v1/services.proto\x12\x08gitea.v1\x1a\x17gitea/v1/messages.proto2J\n\x0cGiteaService\x12:\n\x05Gitea\x12\x16.gitea.v1.GiteaRequest\x1a\x17.gitea.v1.GiteaResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17gitea/v1/services.proto\x12\x08gitea.v1\x1a\x17gitea/v1/messages.proto2\x94\x01\n\x0cGiteaService\x12:\n\x05Gitea\x12\x16.gitea.v1.GiteaRequest\x1a\x17.gitea.v1.GiteaResponse\"\x00\x12H\n\tIntroduce\x12\x1a.gitea.v1.IntroduceRequest\x1a\x1b.gitea.v1.IntroduceResponse\"\x00\x30\x01\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'gitea.v1.services_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _GITEASERVICE._serialized_start=62
-  _GITEASERVICE._serialized_end=136
+  _GITEASERVICE._serialized_start=63
+  _GITEASERVICE._serialized_end=211
 # @@protoc_insertion_point(module_scope)
